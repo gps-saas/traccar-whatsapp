@@ -1,4 +1,4 @@
-# Traccar GPS with WhatsApp Integration
+# Traccar Notifications with WhatsApp Integration
 
 This script integrates Traccar GPS notifications with WhatsApp, enabling you to receive notifications directly via WhatsApp. It uses PM2 for process management and Yarn for dependency management.
 
@@ -36,24 +36,25 @@ nvm install 21.1.0
 nvm use 21.1.0
 ```
 
-#### 5 - Install Yarn globally:
-
-```bash
-npm install -g yarn
-```
-
-#### 6 - Clone the Repository:
+#### 5 - Clone the Repository:
 
 ```bash
 git clone https://github.com/gps-saas/traccar-whatsapp.git
 ```
 
-#### 7 - Navigate to the Repository and install dependencies:
+#### 6 - Navigate to the Repository and install dependencies:
 
 ```bash
 cd traccar-whatsapp
 yarn 
 ```
+
+#### 7 - Install Yarn globally:
+
+```bash
+npm install -g yarn
+```
+
 
 Ensure your Traccar is configured to send notifications via HTTP and you have a working whatapp api.
 
@@ -66,7 +67,7 @@ yarn global add pm2
 #### 9 - Start the application with PM2:
 
 ```bash
-pm2 start index.js --name traccar-whatsapp-integration
+pm2 start index.js --name traccar-whatsapp
 ```
 
 #### 10 - Verify the application is running:
