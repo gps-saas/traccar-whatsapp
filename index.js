@@ -1,23 +1,24 @@
 const express = require('express');
 const cors = require('cors');
+const { sendMessage } = require('./lib/api');
+
+require('dotenv').config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.post('/data', (req, res) => {
+app.post('/', async (req, res) => {
   const data = req.body;
   console.log('Received data:', data);
 
-  res.json({
-    message: 'Data received successfully',
-    receivedData: data
-  });
+  const response = await sendMessage(data.apiKey, data.number, data.text, data.endPoint);
+
+  res.json(response);
 });
 
-const port = 3000;
-const host = '0.0.0.0';
-app.listen(host, port, () => {
-  console.log(`Server running on http://${host}:${port}`);
+const port = 9000;
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });
