@@ -11,7 +11,6 @@ app.use(express.json());
 
 app.post('/', async (req, res) => {
   const data = req.body;
-  console.log('Received data:', data);
 
   const response = await sendMessage(data.apiKey, data.number, data.text, data.endPoint);
 
